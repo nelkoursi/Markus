@@ -27,3 +27,4 @@ log/
 
 # Eclipse generated project file
 /.project
+/nbproject/private/
