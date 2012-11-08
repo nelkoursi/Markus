@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(:version => 20120121222559) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-#dfsd
+
   add_index "annotation_texts", ["annotation_category_id"], :name => "index_annotation_texts_on_annotation_category_id"
 
   create_table "annotations", :force => true do |t|
