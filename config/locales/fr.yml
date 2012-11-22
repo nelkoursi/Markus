@@ -886,6 +886,17 @@ fr:
         pas apparaître.</p>"
         success: "Le fichier contenant le barème (flexible) a bien été envoyé : %{nb_updates} mise(s) à jour."
 
+objective:
+      criteria_management: "Édition du barème pour le projet %{identifier}"
+      save: "Sauvegarder"
+      move_up: "Monter"
+      move_down: "Descendre"
+      name: "Nom du critère"
+      max: "Note maximale"
+      description: "Description"
+      description_hint: "Vous avez la possibilité d'utiliser des tags HTML simples dans ce champ. Pour un aperçu, sauvegardez."
+
+
     rubric_criteria:
       criteria_management: "Édition du barème pour le projet %{identifier}"
       save: "Sauvegarder"
@@ -923,6 +934,28 @@ fr:
         description_2: "Ce critère a été partiellement compris."
         description_3: "Ce critère a été compris."
         description_4: "Ce critère a été parfaitement compris."
+
+rubric_criteria:
+      criteria_management: "Édition du barème pour le projet %{identifier}"
+      save: "Sauvegarder"
+      name: "Nom du critère"
+      move_up: "Monter"
+      move_down: "Descendre"
+      level:
+        levels: "Niveaux"
+        level_index: "Niveau %{index}"
+      error_total: "total weight must be positive"
+      defaults:
+        level_0: "Très insuffisant"
+        level_1: "Insuffisant"
+        level_2: "Passable"
+        level_3: "Bon"
+        level_4: "Excellent"
+        description_0: "Cette compétence n'a pas été comprise."
+        description_1: "Cette compétence n'a pas été très bien comprise."
+        description_2: "Cette compétence a été partiellement comprise."
+        description_3: "Cette compétence a été comprise."
+        description_4: "Cette compétence a été parfaitement comprise."
 
     summary_table:
       title: "Titre"

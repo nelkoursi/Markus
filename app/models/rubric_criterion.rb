@@ -267,7 +267,7 @@ class RubricCriterion < ActiveRecord::Base
   def get_name
     return rubric_criterion_name
   end
-
+  
   def remove_tas(ta_array)
     ta_array = Array(ta_array)
     associations_for_criteria = criterion_ta_associations.all(:conditions => {:ta_id => ta_array})
