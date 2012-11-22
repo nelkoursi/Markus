@@ -16,7 +16,7 @@ class RubricCriterionAssignment < ActiveRecord::Migration
     foreign_key_no_delete :rubric_criterion_assignment_association, :assignment_id,  :assignments
 
     add_column :rubric_criteria, :reusable, :boolean, :null => false, :default => false
-    add_column :rubric_criteria, :is_skill, :boolean, :null => false
+    add_column :rubric_criteria, :is_skill, :boolean, :null => false, :default => false
 
     
   end
