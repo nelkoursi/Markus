@@ -15,7 +15,7 @@ class FlexibleCriterionAssignment < ActiveRecord::Migration
     foreign_key_no_delete :flexible_criterion_assignment_association, :criterion_id,  :flexible_criteria
     foreign_key_no_delete :flexible_criterion_assignment_association, :assignment_id,  :assignments
 
-    add_column :flexible_criteria, :reusable, :boolean, :null => false
+    add_column :flexible_criteria, :reusable, :boolean, :null => false, :default => false
     add_column :flexible_criteria, :is_objective, :boolean, :null => false
    
   end
