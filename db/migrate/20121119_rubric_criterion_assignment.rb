@@ -18,17 +18,16 @@ class RubricCriterionAssignment < ActiveRecord::Migration
     foreign_key_no_delete :rubric_criterion_assignment_association, :rubric_criterion_name,  :rubric_criteria
     foreign_key_no_delete :rubric_criterion_assignment_association, :assignment_id,  :assignments
 
-    add_column :rubric_criteria, :is_cross_skill, :boolean, :null => false
+    add_column :rubric_criteria, :reusable, :boolean, :null => false
     add_column :rubric_criteria, :is_skill, :boolean, :null => false
-    add_column :rubric_criteria, :is_objective, :boolean, :null => false
-   
+
+    
   end
 
   def self.down
     
-    remove_column :rubric_criteria, :is_cross_skill
+    remove_column :rubric_criteria, :reusable
     remove_column :rubric_criteria, :is_skill
-    remove_column :rubric_criteria, :is_objective
     
     delete_foreign_key :rubric_criterion_assignment_association, :rubric_criteria
     delete_foreign_key :rubric_criterion_assignment_association, :assignments
