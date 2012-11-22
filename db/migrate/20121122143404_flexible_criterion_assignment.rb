@@ -7,12 +7,12 @@ class FlexibleCriterionAssignment < ActiveRecord::Migration
   def self.up
 
     create_table :flexible_criterion_assignment_association do |t|
-      t.column    :flexible_criterion_name,   :string, :null => false
+      t.column    :criterion_id,   :integer, :null => false
       t.column    :assignment_id,   :int, :null => false
       t.timestamps
     end
 
-    foreign_key_no_delete :flexible_criterion_assignment_association, :flexible_criterion_name,  :flexible_criteria
+    foreign_key_no_delete :flexible_criterion_assignment_association, :criterion_id,  :flexible_criteria
     foreign_key_no_delete :flexible_criterion_assignment_association, :assignment_id,  :assignments
 
     add_column :flexible_criteria, :reusable, :boolean, :null => false

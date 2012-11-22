@@ -7,12 +7,12 @@ class RubricCriterionAssignment < ActiveRecord::Migration
   def self.up
 
     create_table :rubric_criterion_assignment_association do |t|
-      t.column    :rubric_criterion_name,   :string, :null => false
+      t.column    :criterion_id,   :integer, :null => false
       t.column    :assignment_id,   :int, :null => false
       t.timestamps
     end
 
-    foreign_key_no_delete :rubric_criterion_assignment_association, :rubric_criterion_name,  :rubric_criteria
+    foreign_key_no_delete :rubric_criterion_assignment_association, :criterion_id,  :rubric_criteria
     foreign_key_no_delete :rubric_criterion_assignment_association, :assignment_id,  :assignments
 
     add_column :rubric_criteria, :reusable, :boolean, :null => false
