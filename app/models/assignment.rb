@@ -16,6 +16,11 @@ class Assignment < ActiveRecord::Base
   has_many :assignment_files
   has_many :test_files
   has_many :criterion_ta_associations
+  has_many :flexible_criterion_assignment_association
+  has_many :flexible_criterion, :through => :flexible_criterion_assignment_association
+  has_many :rubric_criterion_assignment_association
+  has_many :rubric_criterion, :through => :rubric_criterion_assignment_association
+  
   has_one :submission_rule
   has_one :assignment_stat
   accepts_nested_attributes_for :submission_rule, :allow_destroy => true

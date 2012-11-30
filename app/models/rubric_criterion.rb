@@ -11,7 +11,9 @@ class RubricCriterion < ActiveRecord::Base
            :as => :criterion,
            :dependent => :destroy
   has_many :tas, :through => :criterion_ta_associations
-
+  has_many :rubric_criterion_assignment_association
+  has_many :assignment, :through => :rubric_criterion_assignment_association
+  
   validates_associated  :assignment, :on => :create
   validates_uniqueness_of :rubric_criterion_name,
                           :scope => :assignment_id
