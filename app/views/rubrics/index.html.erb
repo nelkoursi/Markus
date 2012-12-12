@@ -63,6 +63,11 @@
                                 :method => 'get'}
             }|%>
   <span class="menu_bar" >|</span>
+        <%= link_to_function t("reuse_criterion"),
+            %|#{remote_function :url => reuse_assignment_rubric_path(),
+                                :method => 'get'}
+            |%>
+  <span class="menu_bar" >|</span>
     <%= button_to_function I18n.t("upload"), "upload_criteria();"%>
   <span class="menu_bar" >|</span>
     <%= button_to_function I18n.t("download"), "download_criteria();"%>
@@ -103,6 +108,12 @@
 </div>
 
 <!------------------------------------------------------------------- -->
+
+    <div id="reusable_rubric_selection_pane">
+      <div id="reusable_rubric_selection_pane_menu">
+	<%= render :partial => 'reusable_rubric_manager_help' %>
+      </div>
+    </div>
 
     <div id="rubric_levels_pane">
       <div id="rubric_levels_pane_menu">

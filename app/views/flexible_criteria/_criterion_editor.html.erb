@@ -34,6 +34,10 @@
 	<%= f.text_area :description, :size => "50x6" %>
   </span>
   <br />
+  <span id="criterion_reusable_edit_<%= criterion.id%>" class="criterion_reusable_edit">
+  <%= f.label :reusable, I18n.t("flexible_criteria.reusable"), :class => "bold_inline_label" %>
+  <%= f.check_box :reusable %>
+  </span> <br />
   <span><%= t('flexible_criteria.description_hint') %></span>
 </div>
 

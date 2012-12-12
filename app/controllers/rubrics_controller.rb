@@ -25,6 +25,43 @@ class RubricsController < ApplicationController
     @criterion = RubricCriterion.new
   end
 
+  def reuse
+    @reusable_criteria = RubricCriterion.find(:all, :group => :rubric_criterion_name, :conditions => {:reusable => true})
+  end
+  
+  def reuse_criterion
+    @assignment = Assignment.find(params[:assignment_id])
+    @criteria = @assignment.rubric_criteria
+    criterion = RubricCriterion.find(params[:id])
+    
+    if @criteria.length > 0
+      new_position = @criteria.last.position + 1
+    else
+      new_position = 1
+    end
+    @criterion = RubricCriterion.new
+    @criterion.assignment = @assignment
+    @criterion.weight = criterion.weight
+    @criterion.reusable = criterion.reusable
+    @criterion.level_0_name = criterion.level_0_name
+    @criterion.level_1_name = criterion.level_1_name
+    @criterion.level_2_name = criterion.level_2_name
+    @criterion.level_3_name = criterion.level_3_name
+    @criterion.level_4_name = criterion.level_4_name
+    @criterion.level_0_description = criterion.level_0_description
+    @criterion.level_1_description = criterion.level_1_description
+    @criterion.level_2_description = criterion.level_2_description
+    @criterion.level_3_description = criterion.level_3_description
+    @criterion.level_4_description = criterion.level_4_description
+    @criterion.position = new_position
+    if !@criterion.update_attributes(params[:rubric_criterion])
+      @errors = @criterion.errors
+      render :add_criterion_error
+      return
+    end
+    @criteria.reload
+  end
+
   def create
     @assignment = Assignment.find(params[:assignment_id])
     @criteria = @assignment.rubric_criteria

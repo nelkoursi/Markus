@@ -1,0 +1,13 @@
+<li class="reusable_criterion_holder <%= cycle('rowA', 'rowB') %>" 
+	id="criterion_<%=h(criterion.id)%>">
+  <span class="reusable_criterion_title_div link">
+    <%= link_to truncate(criterion.flexible_criterion_name,
+                                  :length => 30,
+                                  :omission => '...'),
+		        reuse_criterion_assignment_flexible_criterium_path(@assignment, criterion),
+				:remote => true %>
+  </span>
+  <span id="criterion_max_<%=h(criterion.id)%>" class="criterion_max">
+  	<%= h(criterion.max) %>
+  </span>
+</li>

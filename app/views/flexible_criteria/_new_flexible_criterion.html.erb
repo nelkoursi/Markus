@@ -7,6 +7,8 @@
     <%= f.text_field :flexible_criterion_name,
 		     :size => 15,
 		     :id => 'new_flexible_criterion_prompt' %><br />
+    <%= f.label :reusable, t("flexible_criteria.reusable"), :class => "bold_inline_label" %>
+    <%= f.check_box :reusable %>
     <%= f.submit t("flexible_criteria.save"), :disable_with => I18n.t('working')%>
   <% end %>
 </li>

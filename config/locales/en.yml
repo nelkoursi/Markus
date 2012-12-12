@@ -885,6 +885,7 @@ en:
       move_up: "Move up"
       move_down: "Move down"
       name: "Flexible criterion name"
+      reusable: "Reusable"
       max: "Maximum mark"
       description: "Description"
       description_hint: "You may use simple HTML tags in this field. Save changes to see a preview."
@@ -904,21 +905,36 @@ en:
         success: "Flexible criteria successfully uploaded: %{nb_updates} update(s)."
 
 
-    objective:
+    objectives:
       criteria_management:         "Objectives Management: %{identifier}"
       save: "Save changes"
       move_up: "Move up"
       move_down: "Move down"
       name: "Objective name"
+      reusable: "Reusable"
       max: "Maximum mark"
       description: "Description"
       description_hint: "You may use simple HTML tags in this field. Save changes to see a preview."
- 
+      download:
+        title: "Download Flexible Criteria File"
+        prompt: "Flexible criteria are currently available in CSV."
+        link: "Download Flexible criteria in CSV format"
+      upload:
+        title: "Upload Flexible Criteria File"
+        prompt: "Select a CSV file to upload"
+        format_html: "
+        <p>The file should have the following format:</p>
+        <ul><li>one record per line;</li><li>each line should be terminated by a carriage-return line-feed.</li></ul>
+        <code>criteria_name,max_value,description</code>
+        <p>The description is optional. Note that if it is not present, the second
+        comma should not appear.</p>"
+        success: "Flexible criteria successfully uploaded: %{nb_updates} update(s)." 
  
     rubric_criteria:
       criteria_management:         "Rubric Management: %{identifier}"
       save: "Save changes"
       name: "Rubric criterion name"
+      reusable: "Reusable"
       move_up: "Move up"
       move_down: "Move down"
       level:
@@ -972,11 +988,40 @@ en:
       criteria_management:         "Skill Management: %{identifier}"
       save: "Save changes"
       name: "Skill name"
+      reusable: "Reusable"
       move_up: "Move up"
       move_down: "Move down"
       level:
         levels: "Levels"
         level_index: "Level %{index}"
+      download:
+        title: "Download Rubric File"
+        prompt: "Rubric criteria are currently available in CSV and YAML."
+        link_csv: "Download rubric in CSV Format"
+        link_yml: "Download rubric in YAML Format"
+      upload:
+        success: "Rubric criteria successfully uploaded: %{nb_updates} update(s)."
+        csv_title: "Upload CSV File"
+        yml_title: "Upload YML File"
+        csv_prompt: "Select a CSV file to upload"
+        yml_prompt: "Select a YML file to upload"
+        format_csv_html: "
+        <p>The file should have the following format:</p>
+        <ul><li>one record per line;</li><li>each line should be terminated by a carriage-return line-feed.</li></ul>
+        <code>criteria_name,weight,<em>level_names</em>,<em>level_descriptions</em></code>
+        <p>where <em>level_names</em> must contains the name of each level (seperated by commas)<br />
+        and <em>level_descriptions</em> could contains the description of each level (optional, also seperated
+        by commas)."
+        format_yml_html: "
+          <p>The file should have the following format:<br />
+              <code>criterion_name:<br />
+                    &nbsp;&nbsp;weight: weight<br />
+                    &nbsp;&nbsp;level_0:<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;name: level_name<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;description: level_description<br />
+                    &nbsp;&nbsp;level_1:<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;[...]
+          </p>"
       error_total: "total weight must be positive"
       defaults:
         level_0: "Very Poor"
@@ -1036,14 +1081,17 @@ en:
             success: "Note was successfully updated."
 
     add_criterion:                "Add Criterion"
+    reuse_criterion:              "Reuse Criterion"
     criteria_edit_total_mark:     "This criterion will be marked out of %{criterion_total_mark}"
     criterion_saved_success:   "Criterion was successfully saved"
     criterion_deleted_success:  "Criterion, and all associated marks were successfully deleted"
     criteria:           "Criteria"
+    reusable_criteria:  "Reusable criteria"
     criterion:          "Criterion"
     total_mark:         "Total mark"
     weight:             "Weight"
     editing_criteria:   "Editing criteria"
+    reusing_criteria:   "Reusing criteria"
     ordering_criteria:  "Ordering criteria"
     remove_criteria_title:  "Delete this criterion"
     remove_criteria_message:  "Are you sure you want to delete this criterion?"
@@ -1061,6 +1109,9 @@ en:
     help_editing_flexible_criteria_message: "
       Select a criterion on the left to edit it.  Criteria names, descriptions and
       maximum values can be modified."
+    help_reusing_criteria_message: "
+      Select a criterion in the list of reusable criteria to automatically add it.
+      The added criteria can be reedited later by clicking on it."
     past_due_date_warning: "Due date for this assignment is in the past."
 
     section:

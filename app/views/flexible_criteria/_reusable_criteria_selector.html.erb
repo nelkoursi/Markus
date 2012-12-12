@@ -1,0 +1,12 @@
+<div class="reusable_criteria_fieldset">
+  <div id="reusable_flexible_criteria_list_title_bar">
+    <span class="criterion_title_div"><b><%=h I18n.t("reusable_criteria") %></b></span>
+  </div>
+  <div class="clear"></div>
+
+  <ul id="flexible_criteria_pane_list">
+    <% @reusable_criteria.each do |criterion| -%>
+      <%= render :partial => "flexible_criteria/reusable_flexible_criterion", :locals => {:criterion => criterion} %>
+    <% end %>
+  </ul>
+</div>

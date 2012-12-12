@@ -46,6 +46,7 @@ Markus::Application.routes.draw do
       member do
         delete 'destroy'
         get 'move_criterion'
+        get 'reuse_criterion'
       end
 
       collection do
@@ -54,6 +55,7 @@ Markus::Application.routes.draw do
         post 'yml_upload'
         get 'download_csv'
         get 'download_yml'
+        get 'reuse'
       end
     end
 
@@ -61,12 +63,14 @@ Markus::Application.routes.draw do
       member do
         delete 'destroy'
         get 'move_criterion'
+        get 'reuse_criterion'
       end
 
       collection do
         post 'upload'
         post 'update_positions'
         get 'download'
+        get 'reuse'
       end
     end
 

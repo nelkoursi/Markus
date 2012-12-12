@@ -872,6 +872,7 @@ fr:
       move_up: "Monter"
       move_down: "Descendre"
       name: "Nom du critère"
+      reusable: "Réutilisable"
       max: "Note maximale"
       description: "Description"
       description_hint: "Vous avez la possibilité d'utiliser des tags HTML simples dans ce champ. Pour un aperçu, sauvegardez."
@@ -890,219 +891,259 @@ fr:
         pas apparaître.</p>"
         success: "Le fichier contenant le barème (flexible) a bien été envoyé : %{nb_updates} mise(s) à jour."
 
-objective:
-      criteria_management: "Édition du barème pour le projet %{identifier}"
-      save: "Sauvegarder"
-      move_up: "Monter"
-      move_down: "Descendre"
-      name: "Nom du critère"
-      max: "Note maximale"
-      description: "Description"
-      description_hint: "Vous avez la possibilité d'utiliser des tags HTML simples dans ce champ. Pour un aperçu, sauvegardez."
+    objectives:
+        criteria_management: "Édition du barème pour le projet %{identifier}"
+        save: "Sauvegarder"
+        move_up: "Monter"
+        move_down: "Descendre"
+        name: "Nom de l'objectif"
+        reusable: "Réutilisable"
+        max: "Note maximale"
+        description: "Description"
+        description_hint: "Vous avez la possibilité d'utiliser des tags HTML simples dans ce champ. Pour un aperçu, sauvegardez."
+        download:
+          title: "Télécharger le fichier de barème (flexible)"
+          prompt: "Le barème (flexible) est actuellement disponible au format CSV."
+          link: "Télécharger le barème (flexible) au format CSV"
+        upload:
+          title: "Envoyer un fichier de barème (flexible)"
+          prompt: "Choisissez un fichier CSV à envoyer"
+          format_html: "
+          <p>Le fichier devra être au format suivant : </p>
+          <ul><li>un critère par ligne.</li><li>chaque ligne devra être terminée par un retour chariot.</li></ul>
+          <code>criteria_name,max_value,description</code>
+          <p>La description est facultative. NB : Si aucune description n'est présente, la seconde virgule ne doit
+          pas apparaître.</p>"
+          success: "Le fichier contenant le barème (flexible) a bien été envoyé : %{nb_updates} mise(s) à jour."
 
 
     rubric_criteria:
-      criteria_management: "Édition du barème pour le projet %{identifier}"
-      save: "Sauvegarder"
-      name: "Nom du critère"
-      move_up: "Monter"
-      move_down: "Descendre"
-      level:
-        levels: "Niveaux"
-        level_index: "Niveau %{index}"
-      download:
-        title: "Télécharger le fichier de barème (rubrique)"
-        prompt: "Le barème (rubrique) est actuellement disponible au format CSV et YAML."
-        link_csv: "Télécharger le barème (rubrique) au format CSV"
-        link_yml: "Télécharger le barème (rubrique) au format YAML"
-      upload:
-        success: "Le fichier contenant le barème (rubrique) a bien été envoyé : %{nb_updates} mise(s) à jour."
-        title: "Envoyer un fichier de barème (rubrique)"
-        prompt: "Choisissez un fichier CSV à envoyer"
-        format_html: "
-        <p>Le fichier devra être au format suivant : </p>
-        <ul><li>un critère par ligne.</li><li>chaque ligne devra être terminée par un retour chariot.</li></ul>
-        <code>criteria_name,weight,<em>level_names</em>,<em>level_descriptions</em></code>
-        <p>où <em>level_names</em> doit contenir le nom de chaque niveau (séparé par des virgules (,)<br />
-        et <em>level_descriptions</em> doi contenir la description de chaque niveau (optionnel,
-        séparé aussi par les virgules)."
-      error_total: "total weight must be positive"
-      defaults:
-        level_0: "Très insuffisant"
-        level_1: "Insuffisant"
-        level_2: "Passable"
-        level_3: "Bon"
-        level_4: "Excellent"
-        description_0: "Ce critère n'a pas été compris."
-        description_1: "Ce critère n'a pas été très bien compris."
-        description_2: "Ce critère a été partiellement compris."
-        description_3: "Ce critère a été compris."
-        description_4: "Ce critère a été parfaitement compris."
+        criteria_management: "Édition du barème pour le projet %{identifier}"
+        save: "Sauvegarder"
+        name: "Nom du critère"
+        reusable: "Réutilisable"
+        move_up: "Monter"
+        move_down: "Descendre"
+        level:
+          levels: "Niveaux"
+          level_index: "Niveau %{index}"
+        download:
+          title: "Télécharger le fichier de barème (rubrique)"
+          prompt: "Le barème (rubrique) est actuellement disponible au format CSV et YAML."
+          link_csv: "Télécharger le barème (rubrique) au format CSV"
+          link_yml: "Télécharger le barème (rubrique) au format YAML"
+        upload:
+          success: "Le fichier contenant le barème (rubrique) a bien été envoyé : %{nb_updates} mise(s) à jour."
+          title: "Envoyer un fichier de barème (rubrique)"
+          prompt: "Choisissez un fichier CSV à envoyer"
+          format_html: "
+          <p>Le fichier devra être au format suivant : </p>
+          <ul><li>un critère par ligne.</li><li>chaque ligne devra être terminée par un retour chariot.</li></ul>
+          <code>criteria_name,weight,<em>level_names</em>,<em>level_descriptions</em></code>
+          <p>où <em>level_names</em> doit contenir le nom de chaque niveau (séparé par des virgules (,)<br />
+          et <em>level_descriptions</em> doi contenir la description de chaque niveau (optionnel,
+          séparé aussi par les virgules)."
+        error_total: "total weight must be positive"
+        defaults:
+          level_0: "Très insuffisant"
+          level_1: "Insuffisant"
+          level_2: "Passable"
+          level_3: "Bon"
+          level_4: "Excellent"
+          description_0: "Ce critère n'a pas été compris."
+          description_1: "Ce critère n'a pas été très bien compris."
+          description_2: "Ce critère a été partiellement compris."
+          description_3: "Ce critère a été compris."
+          description_4: "Ce critère a été parfaitement compris."
 
-rubric_criteria:
-      criteria_management: "Édition du barème pour le projet %{identifier}"
-      save: "Sauvegarder"
-      name: "Nom du critère"
-      move_up: "Monter"
-      move_down: "Descendre"
-      level:
-        levels: "Niveaux"
-        level_index: "Niveau %{index}"
-      error_total: "total weight must be positive"
-      defaults:
-        level_0: "Très insuffisant"
-        level_1: "Insuffisant"
-        level_2: "Passable"
-        level_3: "Bon"
-        level_4: "Excellent"
-        description_0: "Cette compétence n'a pas été comprise."
-        description_1: "Cette compétence n'a pas été très bien comprise."
-        description_2: "Cette compétence a été partiellement comprise."
-        description_3: "Cette compétence a été comprise."
-        description_4: "Cette compétence a été parfaitement comprise."
+    skills:
+        criteria_management: "Édition du barème pour le projet %{identifier}"
+        save: "Sauvegarder"
+        name: "Nom de la compétence"
+        reusable: "Réutilisable"
+        move_up: "Monter"
+        move_down: "Descendre"
+        level:
+          levels: "Niveaux"
+          level_index: "Niveau %{index}"
+        download:
+          title: "Télécharger le fichier de barème (rubrique)"
+          prompt: "Le barème (rubrique) est actuellement disponible au format CSV et YAML."
+          link_csv: "Télécharger le barème (rubrique) au format CSV"
+          link_yml: "Télécharger le barème (rubrique) au format YAML"
+        upload:
+          success: "Le fichier contenant le barème (rubrique) a bien été envoyé : %{nb_updates} mise(s) à jour."
+          title: "Envoyer un fichier de barème (rubrique)"
+          prompt: "Choisissez un fichier CSV à envoyer"
+          format_html: "
+          <p>Le fichier devra être au format suivant : </p>
+          <ul><li>un critère par ligne.</li><li>chaque ligne devra être terminée par un retour chariot.</li></ul>
+          <code>criteria_name,weight,<em>level_names</em>,<em>level_descriptions</em></code>
+          <p>où <em>level_names</em> doit contenir le nom de chaque niveau (séparé par des virgules (,)<br />
+          et <em>level_descriptions</em> doi contenir la description de chaque niveau (optionnel,
+          séparé aussi par les virgules)."
+        error_total: "total weight must be positive"
+        defaults:
+          level_0: "Très insuffisant"
+          level_1: "Insuffisant"
+          level_2: "Passable"
+          level_3: "Bon"
+          level_4: "Excellent"
+          description_0: "Cette compétence n'a pas été comprise."
+          description_1: "Cette compétence n'a pas été très bien comprise."
+          description_2: "Cette compétence a été partiellement comprise."
+          description_3: "Cette compétence a été comprise."
+          description_4: "Cette compétence a été parfaitement comprise."
 
     summary_table:
-      title: "Titre"
-      max_value: "Valeur maximale"
-      grade: "Note intermédiaire"
-      x_mark: "x Note"
-      weight: "Coefficient"
+        title: "Titre"
+        max_value: "Valeur maximale"
+        grade: "Note intermédiaire"
+        x_mark: "x Note"
+        weight: "Coefficient"
 
     notes:
-        note_on: "%{user_name} sur <b>%{display_for}</b>"
-        add_new: "Nouvelle remarque"
-        existing: "Remarques existantes"
-        comment: "Votre commentaire"
-        save: "Enregistrer la remarque"
-        success: "Note sauvegardée"
-        error: "Impossible de sauvegarder la remarque"
-        title: "Remarques"
-        note: "Remarque"
-        noteable: "Remarque à propos de"
-        # visible options for dropdown. Symbols intentionally capitalized.
-        noteables:
-            Grouping: "Groupe"
-            Student:  "Étudiant(e)"
-            Assignment: "Projet"
-        author: "Auteur"
-        creation_time: "Date de création"
-        delete:
-            link_title: "Supprimer la remarque"
-            link_confirm: "Cela supprimera définitivement la remarque. Êtes-vous sûr de vouloir continuer ?"
-            success: "La remarque a bien été supprimée."
-            error_permissions: "Vous n'avez pas les permissions suffisantes pour supprimer cette remarque."
-        new:
-            note_message: "Remarque"
-            title: "Création d'une remarque"
-            loading_groupings: "Chargement des groupes…"
-            loading_selector: "Chargement…"
-            invalid_selector: "Mauvais sélecteur."
-            no_noteables: "Les remarques sont rattachées aux groupes, projets ou étudiants, mais il n'existe pas encore de remarque. Merci d'en créer une d'abord."
-        create:
-            success: "Remarque sauvegardée."
-        edit:
-            title: "Édition de la remarque"
-        update:
-            success: "Remarque mise à jour."
+          note_on: "%{user_name} sur <b>%{display_for}</b>"
+          add_new: "Nouvelle remarque"
+          existing: "Remarques existantes"
+          comment: "Votre commentaire"
+          save: "Enregistrer la remarque"
+          success: "Note sauvegardée"
+          error: "Impossible de sauvegarder la remarque"
+          title: "Remarques"
+          note: "Remarque"
+          noteable: "Remarque à propos de"
+          # visible options for dropdown. Symbols intentionally capitalized.
+          noteables:
+              Grouping: "Groupe"
+              Student:  "Étudiant(e)"
+              Assignment: "Projet"
+          author: "Auteur"
+          creation_time: "Date de création"
+          delete:
+              link_title: "Supprimer la remarque"
+              link_confirm: "Cela supprimera définitivement la remarque. Êtes-vous sûr de vouloir continuer ?"
+              success: "La remarque a bien été supprimée."
+              error_permissions: "Vous n'avez pas les permissions suffisantes pour supprimer cette remarque."
+          new:
+              note_message: "Remarque"
+              title: "Création d'une remarque"
+              loading_groupings: "Chargement des groupes…"
+              loading_selector: "Chargement…"
+              invalid_selector: "Mauvais sélecteur."
+              no_noteables: "Les remarques sont rattachées aux groupes, projets ou étudiants, mais il n'existe pas encore de remarque. Merci d'en créer une d'abord."
+          create:
+              success: "Remarque sauvegardée."
+          edit:
+              title: "Édition de la remarque"
+          update:
+              success: "Remarque mise à jour."
 
     add_criterion:                "Ajouter un critère"
+    reuse_criterion:              "Réutiliser un critère"
     criteria_edit_total_mark:     "Ce critère sera noté sur %{criterion_total_mark}."
     criterion_saved_success:   "Le critète a été sauvegardé."
     criterion_deleted_success:  "Le critère et toutes les notes associées ont été supprimés."
     criteria:           "Critères"
+    reusable_criteria:  "Critères réutilisables"
     criterion:          "Critère"
     total_mark:         "Note totale"
     weight:             "Coefficient"
     editing_criteria:   "Édition des critères"
+    reusing_criteria:   "Réutilisation des critères"
     ordering_criteria:  "Ordonner les critères"
     remove_criteria_title:  "Supprimer ce critère"
     remove_criteria_message:  "Êtes-vous sûr de vouloir supprimer ce critère ?"
     help_editing_rubric_criteria_message: "
-      Sélectionner un critère sur la gauche pour l'éditer. La description du
-      critère, son nom et la note maximale peuvent être changés. Le coefficent
-      peut aussi être changé. Pour mettre un coefficient décimal, il
-      suffit d'entrer un nombre décimal dans le champ prévu.
-      Les niveaux des critères ne peuvent pas être changés. Cependant, si
-      aucune description n'est indiquée pour un niveau, il ne sera pas utilisé."
+          Sélectionner un critère sur la gauche pour l'éditer. La description du
+          critère, son nom et la note maximale peuvent être changés. Le coefficent
+          peut aussi être changé. Pour mettre un coefficient décimal, il
+          suffit d'entrer un nombre décimal dans le champ prévu.
+          Les niveaux des critères ne peuvent pas être changés. Cependant, si
+          aucune description n'est indiquée pour un niveau, il ne sera pas utilisé."
     help_ordering_criteria_message: "
-  Les correcteurs verront les critères dans l'ordre où ils sont affichés sur la colonne à gauche.
-  Pour changer l'ordre, glissez-déposez les critères à votre convenance
-  dans la liste."
+      Les correcteurs verront les critères dans l'ordre où ils sont affichés sur la colonne à gauche.
+      Pour changer l'ordre, glissez-déposez les critères à votre convenance
+      dans la liste."
     help_editing_flexible_criteria_message: "
-    Sélectionner un critère sur la gauche pour l'éditer. Les nom des critères, leurs descriptions
-    et les notes maximales peuvent être modifiés."
+        Sélectionner un critère sur la gauche pour l'éditer. Les nom des critères, leurs descriptions
+        et les notes maximales peuvent être modifiés."
+    help_reusing_criteria_message: "
+          Sélectionner un critère dans la liste des critères réutilisables pour l'ajouter automatiquement.
+          Les critères ainsi ajoutés peuvent être réédités par la suite en cliquant dessus dans la liste
+          la plus à gauche."
     past_due_date_warning: "La date de retour de ce projet est passée."
 
     section:
-      name: "Nom de la section"
-      legend: "Section"
-      create_new_section: "Ajouter une nouvelle section"
-      update_section: "Édition de la section"
-      add_section: "Ajouter une section"
-      manage_users: "Gestion des utilisateurs"
-      due_dates_type: "Activer les dates de rendu par section : "
-      no_sections: "Il n'y a pas encore de section."
-      create:
-        success: "Section créée."
-        error:   "Section non créée."
-      update:
-        success: "Section mise à jour."
-        error:   "Échec des modifications de la section."
-      delete:
-        success: "La section a bien été supprimée."
-        link_confirm: "Cela supprimera définitivement la section. Êtes-vous sûr de vouloir continuer?"
-        error_permissions: "Vous n'avez pas les permissions suffisantes pour supprimer cette section."
-        not_empty: "Vous ne pouvez pas supprimer cette section car elle contient des étudiants."
+          name: "Nom de la section"
+          legend: "Section"
+          create_new_section: "Ajouter une nouvelle section"
+          update_section: "Édition de la section"
+          add_section: "Ajouter une section"
+          manage_users: "Gestion des utilisateurs"
+          due_dates_type: "Activer les dates de rendu par section : "
+          no_sections: "Il n'y a pas encore de section."
+          create:
+            success: "Section créée."
+            error:   "Section non créée."
+          update:
+            success: "Section mise à jour."
+            error:   "Échec des modifications de la section."
+          delete:
+            success: "La section a bien été supprimée."
+            link_confirm: "Cela supprimera définitivement la section. Êtes-vous sûr de vouloir continuer?"
+            error_permissions: "Vous n'avez pas les permissions suffisantes pour supprimer cette section."
+            not_empty: "Vous ne pouvez pas supprimer cette section car elle contient des étudiants."
 
     date:
-      formats:
-        default: "%d/%m/%Y"
-        short: "%e %b"
-        long: "%e %B %Y"
-        long_ordinal: "%e %B %Y"
-        only_day: "%e"
-        #MarkUs LONG_DATE_TIME_FORMAT
-        long_date: "%d %B %Y à %H:%M"
-        #MarkUs SHORT_DATE_TIME_FORMAT
-        short_date: "%d %B %Y"
-     
-      day_names: [dimanche, lundi, mardi, mercredi, jeudi, vendredi, samedi]
-      abbr_day_names: [dim, lun, mar, mer, jeu, ven, sam]
-      month_names: [~, janvier, février, mars, avril, mai, juin, juillet, août, septembre, octobre, novembre, décembre]
-      abbr_month_names: [~, jan., fév., mar., avr., mai, juin, juil., août, sept., oct., nov., déc.]
-      order: [ :day, :month, :year ]
+          formats:
+            default: "%d/%m/%Y"
+            short: "%e %b"
+            long: "%e %B %Y"
+            long_ordinal: "%e %B %Y"
+            only_day: "%e"
+            #MarkUs LONG_DATE_TIME_FORMAT
+            long_date: "%d %B %Y à %H:%M"
+            #MarkUs SHORT_DATE_TIME_FORMAT
+            short_date: "%d %B %Y"
+
+          day_names: [dimanche, lundi, mardi, mercredi, jeudi, vendredi, samedi]
+          abbr_day_names: [dim, lun, mar, mer, jeu, ven, sam]
+          month_names: [~, janvier, février, mars, avril, mai, juin, juillet, août, septembre, octobre, novembre, décembre]
+          abbr_month_names: [~, jan., fév., mar., avr., mai, juin, juil., août, sept., oct., nov., déc.]
+          order: [ :day, :month, :year ]
 
     time:
-      formats:
-        default: "%d %B %Y %H:%M"
-        time: "%H:%M"
-        short: "%d %b %H:%M"
-        long: "%A %d %B %Y %H:%M:%S %Z"
-        long_ordinal: "%A %d %B %Y %H:%M:%S %Z"
-        only_second: "%S"
-        #MarkUs LONG_DATE_TIME_FORMAT
-        long_date: "%d %B %Y à %H:%M"
-        #MarkUs SHORT_DATE_TIME_FORMAT
-        short_date: "%d %B %Y"
-        #MarkUs ANT_LOG_DATE_TIME_FORMAT
-        ant_date: "%d-%B-%Y_%H:%M"
-      am: 'am'
-      pm: 'pm'
+          formats:
+            default: "%d %B %Y %H:%M"
+            time: "%H:%M"
+            short: "%d %b %H:%M"
+            long: "%A %d %B %Y %H:%M:%S %Z"
+            long_ordinal: "%A %d %B %Y %H:%M:%S %Z"
+            only_second: "%S"
+            #MarkUs LONG_DATE_TIME_FORMAT
+            long_date: "%d %B %Y à %H:%M"
+            #MarkUs SHORT_DATE_TIME_FORMAT
+            short_date: "%d %B %Y"
+            #MarkUs ANT_LOG_DATE_TIME_FORMAT
+            ant_date: "%d-%B-%Y_%H:%M"
+          am: 'am'
+          pm: 'pm'
 
-    #app/views/assignments/_read.html.erb
+        #app/views/assignments/_read.html.erb
     no_grader_assigned: "Correcteur par défaut : Enseignant chargé du cours."
 
     locale_not_available: "La traduction %{locale} n'est pas disponible"
     external_authentication_not_supported: "L'authentification externe n'est pas supportée sur votre plateforme"
     account_disabled: "Ce compte a été désactivé"
 
-    #app/views/main/_assignment_info_summary.erb
+        #app/views/main/_assignment_info_summary.erb
     assignment_average:        "Moyenne : %{results_average} %"
     assignments_submitted:     "Projets envoyés :"
     assignments_graded:        "Projets corrigés :"
     refresh_graph:             "Actualiser le graphique"
 
-    #app/views/main/_grader_summary.erb
+        #app/views/main/_grader_summary.erb
     grader_distribution:       "Correcteurs assignés :"
     assign_graders:            "Attribuer Correcteurs"
 
@@ -1150,7 +1191,7 @@ rubric_criteria:
         tokens_no_more_available: "<span class=\"prop_label\">Jetons disponibles:</span >pas de jetons disponibles"
         tokens_available: "<span class=\"prop_label\">Jetons disponibles:</span> %{tokens}"
 
-#Missing Activerecord Translations for french
+    #Missing Activerecord Translations for french
     datetime:
       distance_in_words:
         half_a_minute: "une demi-minute"

@@ -1,0 +1,1 @@
+page.replace_html 'reusable_flexible_selection_pane_menu', :partial => 'reusable_criteria_selector', :locals => {:reusable_criteria => @reusable_criteria}

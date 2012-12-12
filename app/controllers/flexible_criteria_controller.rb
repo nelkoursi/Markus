@@ -28,6 +28,34 @@ class FlexibleCriteriaController < ApplicationController
     @criterion = FlexibleCriterion.new
   end
 
+  def reuse
+    @reusable_criteria = FlexibleCriterion.find(:all, :group => :flexible_criterion_name, :conditions => {:reusable => true})
+  end
+  
+  def reuse_criterion
+    @assignment = Assignment.find(params[:assignment_id])
+    @criteria = @assignment.flexible_criteria
+    criterion = FlexibleCriterion.find(params[:id])
+    
+    if @criteria.length > 0
+      new_position = @criteria.last.position + 1
+    else
+      new_position = 1
+    end
+    @criterion = FlexibleCriterion.new
+    @criterion.assignment = @assignment
+    @criterion.max = criterion.max
+    @criterion.description = criterion.description
+    @criterion.reusable = criterion.reusable
+    @criterion.position = new_position
+    if !@criterion.update_attributes(params[:flexible_criterion])
+      @errors = @criterion.errors
+      render :add_criterion_error
+      return
+    end
+    @criteria.reload
+  end
+
   def create
     @assignment = Assignment.find(params[:assignment_id])
     @criteria = @assignment.flexible_criteria

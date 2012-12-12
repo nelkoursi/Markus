@@ -62,6 +62,10 @@
         #{remote_function :url => {:action => "new", :id => @assignment.id}, :method => 'get'}
         }|%>
     <span class="menu_bar" >|</span>
+    <%= link_to_function t("reuse_criterion"), %|
+        #{remote_function :url => {:action => "reuse", :id => @assignment.id}, :method => 'get'}
+        |%>
+    <span class="menu_bar" >|</span>
       <%= button_to_function I18n.t("upload"), "upload_criteria();"%>
     <span class="menu_bar" >|</span>
       <%= button_to_function I18n.t("download"), "download_criteria();"%>
@@ -89,6 +93,12 @@
 
   <div id="flexible_criteria_pane">
     <%=  render :partial => "flexible_criteria/flexible_criteria_pane" %>
+  </div>
+
+  <div id="reusable_flexible_selection_pane">
+    <div id="reusable_flexible_selection_pane_menu">
+	  <%= render :partial => 'reusable_flexible_criteria_manager_help' %>
+    </div>
   </div>
 
   <div id="flexible_edition_pane">
