@@ -4,7 +4,7 @@
     <%= link_to truncate(criterion.flexible_criterion_name,
                                   :length => 30,
                                   :omission => '...'),
-		        reuse_criterion_assignment_flexible_criterium_path(@assignment, criterion),
+                                  :controller => 'flexible_criteria', :action=>'reuse_criterion', :assignment_id=>@assignment.id ,:id=> criterion.id,
 				:remote => true %>
   </span>
   <span id="criterion_max_<%=h(criterion.id)%>" class="criterion_max">

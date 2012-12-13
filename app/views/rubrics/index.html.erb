@@ -64,7 +64,7 @@
             }|%>
   <span class="menu_bar" >|</span>
         <%= link_to_function t("reuse_criterion"),
-            %|#{remote_function :url => reuse_assignment_rubric_path(),
+            %|#{remote_function :url => {:action => "reuse", :id => @assignment.id},
                                 :method => 'get'}
             |%>
   <span class="menu_bar" >|</span>

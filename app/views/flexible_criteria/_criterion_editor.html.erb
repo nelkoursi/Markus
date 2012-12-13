@@ -38,6 +38,10 @@
   <%= f.label :reusable, I18n.t("flexible_criteria.reusable"), :class => "bold_inline_label" %>
   <%= f.check_box :reusable %>
   </span> <br />
+  <span id="criterion_objective_edit_<%= criterion.id%>" class="criterion_objective_edit">
+  <%= f.label :is_objective, I18n.t("flexible_criteria.objective"), :class => "bold_inline_label" %>
+  <%= f.check_box :is_objective %>
+  </span> <br />
   <span><%= t('flexible_criteria.description_hint') %></span>
 </div>
 

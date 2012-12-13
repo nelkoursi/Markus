@@ -7,6 +7,8 @@
   <%= f.text_field :rubric_criterion_name, :size => 15, :id => 'new_rubric_criterion_prompt' %><br />
   <%= f.label :reusable, t("rubric_criteria.reusable"), :class => "bold_inline_label" %>
   <%= f.check_box :reusable %>
+  <%= f.label :is_skill, t("rubric_criteria.skill"), :class => "bold_inline_label" %>
+  <%= f.check_box :is_skill %>
 <%= f.submit t("rubric_criteria.save"), :disable_with => I18n.t('working')%>
 <% end %>
 </li>
