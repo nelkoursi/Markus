@@ -29,7 +29,7 @@ class FlexibleCriteriaController < ApplicationController
   end
 
   def reuse
-    @reusable_criteria = FlexibleCriterion.find(:all, :conditions => {:reusable => true}).group(:flexible_criteria_name)
+    @reusable_criteria = FlexibleCriterion.find(:all, :group => "flexible_criterion_name, id",:conditions => {:reusable => true})
     @assignment = Assignment.find(params[:assignment_id])
   end
   
