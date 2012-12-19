@@ -1113,7 +1113,8 @@ en:
       maximum values can be modified."
     help_reusing_criteria_message: "
       Select a criterion in the list of reusable criteria to automatically add it.
-      The added criteria can be reedited later by clicking on it."
+      The added criteria can be modified later by clicking on it. Moreover, if you modify it,
+      you should change the name."
     past_due_date_warning: "Due date for this assignment is in the past."
 
     section:

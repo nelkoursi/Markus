@@ -61,12 +61,6 @@
 <%= render :partial => "results/common/annotations.js" %>
 <%= render :partial => "results/student/boot.js", :locals => {:first_file => @first_file} %>
 <%= render :partial => "results/student/enable_remark_request_buttons.js" %>
-
-<% # INCLUDING BLUFF LIBRARY SCRIPTS %>
-<%= javascript_include_tag "Bluff/js-class.js",
- 		"Bluff/bluff.js",
-		"Bluff/excanvas.js" %>
-
 <div id="title_bar">
 <h1>Results For <%= h(sanitize(@assignment.short_identifier)) %></h1>
 </div>

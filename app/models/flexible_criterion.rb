@@ -15,7 +15,9 @@ class FlexibleCriterion < ActiveRecord::Base
 
   has_many :tas, :through => :criterion_ta_associations
   has_many :flexible_criterion_assignment_association
-  has_many :assignment, :through => :flexible_criterion_assignment_association
+  
+  #flexible_criterion_assignment_association are not used yet
+  #has_many :list_assignments, :through => :flexible_criterion_assignment_association
 
   validates_associated :assignment,
                   :message => 'association is not strong with an assignment'

@@ -16,15 +16,6 @@
     </div> <!-- End of Code holder -->
 
     <div id="annotations_summary" class="tabbedArea">
-# Addition of the graph
-	
-	<%= render :partial => "results/student/graph_results",
-       		   :locals => {:old_result => old_result,
-                   	       :result => result,
-                               :submission => @submission,
-                               :assignment => @assignment,
-                  	       :mark_criteria =>@mark_criteria,
-                  	       :marks_map => @marks_map} %>
 
       <h3><%= I18n.t("marker.overall_comments") %></h3>
 

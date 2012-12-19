@@ -1,0 +1,28 @@
+<canvas id="assignment_<%= assignment.id %>" width="600" height="425">sdf</canvas>
+
+<script type="text/javascript">
+  //<![CDATA[
+    // Set-up the graph
+    var g = new Bluff.Bar('assignment_<%= assignment.id %>', '600x425');
+    g.tooltips = true;
+
+    // Set-up the theme
+    g.set_theme({
+        colors: ['#0a67ad'],
+        marker_color: '#aea9a9',
+        font_color: '#000',
+        background_colors: '#fff'
+    });
+    
+    // Build the data	
+    <% @mark_criteria.each do |mark_criterion| %>
+	var legend='<%= mark_criterion.#{@assignment.marking_scheme_type}_criterion_name %>';
+	var mark=(<%= marks_map[mark_criterion.id].mark %>);
+    g.data(legend, [mark]);
+
+    <% end %>
+    // Draw the graph
+    g.draw();
+//]]>
+</script>
+

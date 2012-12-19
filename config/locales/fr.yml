@@ -1073,7 +1073,7 @@ fr:
     help_reusing_criteria_message: "
           Sélectionner un critère dans la liste des critères réutilisables pour l'ajouter automatiquement.
           Les critères ainsi ajoutés peuvent être réédités par la suite en cliquant dessus dans la liste
-          la plus à gauche."
+          la plus à gauche. Si vous modifiez un critère, il serait préférable de changer le nom."
     past_due_date_warning: "La date de retour de ce projet est passée."
 
     section:
