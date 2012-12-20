@@ -26,7 +26,7 @@ class RubricsController < ApplicationController
   end
 
   def reuse
-    @reusable_criteria = RubricCriterion.find(:all, :group => "rubric_criterion_name, id", :conditions => {:reusable => true})
+    @reusable_criteria = RubricCriterion.find(:all, :group => "rubric_criterion_name, id", :conditions => {:reusable => true}, :order => :rubric_criterion_name)
     @assignment = Assignment.find(params[:assignment_id])
   end
   
